@@ -150,7 +150,7 @@ p {
 }
 
 #question-page {
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 100%;
     width: 100%;
@@ -187,7 +187,7 @@ p {
 }
 
 #result-page{
-    display: none;
+    display: flex;
     position: absolute;
     right: 0;
     flex-direction: column;
@@ -199,4 +199,8 @@ p {
     padding: 10%;
     font-size: 2.25em;
     line-height: 2;
+
+    #back-btn{
+        font-size: 1em;
+    }
 }

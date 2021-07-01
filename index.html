@@ -10,29 +10,53 @@
     <title>Laboural</title>
 </head>
 <body>
-    <div class="disclaimer-ctn">
-        <h1>Laboural</h1>
-        <h2>Disclaimer</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mollis enim a nibh suscipit, ut vehicula est sollicitudin. Sed et diam sem. Pellentesque ultricies euismod placerat. Suspendisse ac ultricies tellus, sed imperdiet quam. Vestibulum mollis erat ac erat venenatis tincidunt. Cras varius nec orci eu sollicitudin. Nulla quis ullamcorper felis, id finibus lorem. Praesent ultrices nulla odio, vel accumsan justo lacinia in. Mauris vitae metus vel lorem semper condimentum eget bibendum augue. Duis aliquet enim ac purus tincidunt, in laoreet metus placerat. Integer venenatis dignissim magna, ac posuere erat varius eu. Pellentesque sagittis, augue et vehicula finibus, ex velit blandit libero, nec sodales libero tortor ac dolor.</p>
+    <div id="agreement-ctn">
+        <h1>แพลตฟอร์มตอบปัญหากฎหมายแรงงานด้วยระบบอัตโนมัติ</h1>
         
-        <label class="container">
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-            I have read ...
-          </label>
-          
-        <label class="container">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            I accept ..
-        </label>
+        <div class="disclaimer-ctn">
+            <h2>Disclaimer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mollis enim a nibh suscipit, ut vehicula est sollicitudin. Sed et diam sem. Pellentesque ultricies euismod placerat. Suspendisse ac ultricies tellus, sed imperdiet quam. Vestibulum mollis erat ac erat venenatis tincidunt. Cras varius nec orci eu sollicitudin. Nulla quis ullamcorper felis, id finibus lorem. Praesent ultrices nulla odio, vel accumsan justo lacinia in. Mauris vitae metus vel lorem semper condimentum eget bibendum augue. Duis aliquet enim ac purus tincidunt, in laoreet metus placerat. Integer venenatis dignissim magna, ac posuere erat varius eu. Pellentesque sagittis, augue et vehicula finibus, ex velit blandit libero, nec sodales libero tortor ac dolor.</p>
+        </div>
+        
+        <div class="all-check-ctn">
+            <label class="check-ctn">
+                <input id="check1" type="checkbox" onclick="enableStartBtn()">
+                <span class="checkmark"></span>
+                I have read ...
+              </label>
+              
+            <label class="check-ctn">
+                <input id="check2" type="checkbox" onclick="enableStartBtn()">
+                <span class="checkmark"></span>
+                I accept ..
+            </label>
+        </div>
+        
 
-        <button>Start</button>
+        <button id="start-btn" onclick="startQuestions()">Start</button>
 
     </div>
     
-    <div class="question"></div>
-    <div class="anwsers-ctn"></div>
+    <div id="question-page">
+        
+        <div class="question-ctn">
+            <h1 id="question-text">เลือกปัญหาของท่าน</h1>
+        </div>
+        <div class="anwsers-ctn">
+            <ul>
+                <li class="choices" onclick="next(0)">ถูกเลิกจ้าง</li>
+                <li class="choices" onclick="next(1)">ถูกลดค่าจ้าง</li>
+                <li class="choices" onclick="next(2)">การทำงานล่วงเวลา</li>
+                <li class="choices" onclick="next(3)">นายจ้างให้ work from home</li>
+                <li class="choices" onclick="next(4)">COVID-19 : กักตัว, เป็นกลุ่มเสี่ยง, หรือได้รับเชื้อ</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="result-page">
+        <p id="result-text">Result</p>
+    </div>
+    
     
 </body>
 </html>

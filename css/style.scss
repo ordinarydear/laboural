@@ -58,10 +58,13 @@ p {
         font-size: 1em;
         opacity: 0.6;
         cursor: not-allowed;
+        pointer-events: none;
+
 
         &.-active {
             opacity: 1;
             cursor: pointer;
+            pointer-events: all;
             transition: 0.3s;
 
             &:hover {
@@ -166,7 +169,7 @@ p {
     }
 
     #question-text {
-        font-size: clamp(0.75em, 2.5vw, 1em);
+        font-size: clamp(1em, 2.5vw, 1em);
     }
 
     ul {

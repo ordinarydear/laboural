@@ -215,9 +215,15 @@ p {
   background-color: #fff;
 }
 
-#question-page ul li:hover, #question-page ul li:active {
+@media (hover: hover) {
+  #question-page ul li:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+}
+
+#question-page ul li:active {
   background-color: #e6e6e6;
-  cursor: pointer;
 }
 
 #result-page {

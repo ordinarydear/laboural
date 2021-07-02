@@ -188,10 +188,15 @@ p {
             margin-top: -1px;
             background-color: #fff;
 
-            &:hover,
-            &:active {
+            @media (hover: hover) {
+                 &:hover{
+                    background-color: rgb(230, 230, 230);
+                    cursor: pointer;
+                 }    
+            }
+
+            &:active{
                 background-color: rgb(230, 230, 230);
-                cursor: pointer;
             }
         }
     }

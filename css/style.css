@@ -26,7 +26,7 @@ h2 {
 }
 
 p {
-  font-size: clamp(0.5em, 1.5vh, 1.75em);
+  font-size: clamp(0.75em, 2vw, 1em);
 }
 
 #agreement-ctn {
@@ -34,7 +34,9 @@ p {
           box-sizing: inherit;
   height: 100%;
   position: absolute;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -186,6 +188,11 @@ p {
 #question-page .question-ctn {
   margin: 2em 0;
   background-color: #fff;
+  font-size: clamp(1em, 2.5vw, 1.25em);
+}
+
+#question-page #question-text {
+  font-size: clamp(0.75em, 2.5vw, 1em);
 }
 
 #question-page ul {
@@ -200,7 +207,7 @@ p {
   position: relative;
   display: block;
   width: 100%;
-  padding: 0.75em;
+  padding: 1em;
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #fff;
@@ -212,9 +219,7 @@ p {
 }
 
 #result-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   right: 0;
   -webkit-box-orient: vertical;
@@ -229,12 +234,19 @@ p {
   height: 100%;
   width: 100%;
   background-color: #fff;
-  padding: 10%;
-  font-size: 2.25em;
   line-height: 2;
 }
 
+#result-page #result-text {
+  padding: 10% 10%;
+  font-size: clamp(1em, 2.5vw, 1.25em);
+}
+
 #result-page #back-btn {
-  font-size: 1em;
+  text-decoration: underline;
+}
+
+#result-page #back-btn:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

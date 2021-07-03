@@ -5,15 +5,17 @@
     --hover: #1e83e9;
 }
 
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
     font-family: "Kanit", sans-serif;
 }
 
 body {
-    text-align: center;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 h1 {
@@ -26,22 +28,40 @@ h2 {
 }
 
 p {
-    font-size: clamp(0.75em, 2vw, 1em);
+    font-size: clamp(0.75em, 1.5vw, 0.75em);
 }
 
 #agreement-ctn {
-    box-sizing: inherit;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
+    place-content: center;
     align-items: center;
-    justify-content: center;
-    padding: 0 10%;
-
+    padding: 0 10vw;
 
     .disclaimer-ctn {
-        padding: 16px 0;
+        margin: 2vh 0;
+        padding: 1.5vh 4vw;
+        height: 300px;
+        width: clamp(300px, 80vw, 800px);
+        overflow: scroll;
+        text-align: start;
+        border: 1px solid #d6dee1;
+        box-shadow: 0 4px 28px rgba(123, 151, 158, 0.25);
+        border-radius: 6px;
+
+        &::-webkit-scrollbar{
+            width: 20px;
+
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
     }
 
     #start-btn {
@@ -49,7 +69,6 @@ p {
         width: 70%;
         border: none;
         color: white;
-        margin: 5% 0;
         padding: 0.75em 1em;
         text-align: center;
         text-decoration: none;
@@ -59,7 +78,6 @@ p {
         opacity: 0.6;
         cursor: not-allowed;
         pointer-events: none;
-
 
         &.-active {
             opacity: 1;
@@ -76,81 +94,79 @@ p {
     .all-check-ctn {
         display: flex;
         flex-direction: column;
-        width: fit-content;
-        margin: 8px 0px;
+        margin: 2vh 0;
+
+        input {
+            margin-right: 6px;
+        }
+
+        label {
+            font-size: 0.75em;
+            text-align: start;
+            margin-right: 2vw;
+        }
+        .check-accept {
+            display: flex;
+            justify-content: center;
+            margin-top: 1vh;
+        }
     }
 
-    .check-ctn {
-        display: flex;
-        width: fit-content;
-        justify-content: center;
-        align-content: center;
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: 0.75em;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+    //     /* Hide the browser's default checkbox */
+    //     .check-ctn input {
+    //         position: absolute;
+    //         opacity: 0;
+    //         cursor: pointer;
+    //         height: 0;
+    //         width: 0;
+    //         border: 0;
+    //     }
 
-    /* Hide the browser's default checkbox */
-    .check-ctn input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-        border: 0;
-    }
+    //     /* Create a custom checkbox */
+    //     .checkmark {
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         height: 20px;
+    //         width: 20px;
+    //         background-color: #eee;
+    //         border: 0;
+    //     }
 
-    /* Create a custom checkbox */
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: #eee;
-        border: 0;
-    }
+    //     /* On mouse-over, add a grey background color */
+    //     .check-ctn:hover input ~ .checkmark {
+    //         background-color: #ccc;
+    //     }
 
-    /* On mouse-over, add a grey background color */
-    .check-ctn:hover input ~ .checkmark {
-        background-color: #ccc;
-    }
+    //     /* When the checkbox is checked, add a blue background */
+    //     .check-ctn input:checked ~ .checkmark {
+    //         background-color: #2196f3;
+    //     }
 
-    /* When the checkbox is checked, add a blue background */
-    .check-ctn input:checked ~ .checkmark {
-        background-color: #2196f3;
-    }
+    //     /* Create the checkmark/indicator (hidden when not checked) */
+    //     .checkmark:after {
+    //         content: "";
+    //         position: absolute;
+    //         display: none;
+    //     }
 
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
+    //     /* Show the checkmark when checked */
+    //     .check-ctn input:checked ~ .checkmark:after {
+    //         display: block;
+    //     }
 
-    /* Show the checkmark when checked */
-    .check-ctn input:checked ~ .checkmark:after {
-        display: block;
-    }
-
-    /* Style the checkmark/indicator */
-    .check-ctn .checkmark:after {
-        left: 7px;
-        top: 3px;
-        width: 3px;
-        height: 8px;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
+    //     /* Style the checkmark/indicator */
+    //     .check-ctn .checkmark:after {
+    //         left: 7px;
+    //         top: 3px;
+    //         width: 3px;
+    //         height: 8px;
+    //         border: solid white;
+    //         border-width: 0 3px 3px 0;
+    //         -webkit-transform: rotate(45deg);
+    //         -ms-transform: rotate(45deg);
+    //         transform: rotate(45deg);
+    //     }
 }
 
 #question-page {
@@ -160,7 +176,6 @@ p {
     width: 100%;
     background-color: #fff;
     padding: 2em;
-    
 
     .question-ctn {
         margin: 2em 0;
@@ -189,13 +204,13 @@ p {
             background-color: #fff;
 
             @media (hover: hover) {
-                 &:hover{
+                &:hover {
                     background-color: rgb(230, 230, 230);
                     cursor: pointer;
-                 }    
+                }
             }
 
-            &:active{
+            &:active {
                 background-color: rgb(230, 230, 230);
             }
         }

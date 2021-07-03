@@ -286,11 +286,17 @@ function showResult (resultText) {
   document.getElementById('question-page').style.display = 'none'
 }
 
-function enableStartBtn () {
-  var checkBox1 = document.getElementById('check1')
-  var checkBox2 = document.getElementById('check2')
+function enableStartBtn (index) {
+  var check = document.getElementsByClassName("check")
 
-  if (checkBox1.checked == true && checkBox2.checked == true) {
+  if (index != 0){
+    for (let i = 1; i < 3; i++){
+      check[i].checked = false
+    }
+    check[index].checked = true
+  }
+
+  if (check[0].checked == true && check[1].checked == true) {
     document.getElementById('start-btn').classList.add('-active')
   } else {
     document.getElementById('start-btn').classList.remove('-active')
